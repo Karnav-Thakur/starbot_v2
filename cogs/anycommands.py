@@ -15,7 +15,6 @@ from datetime import datetime,timedelta
 from math import log10,log,sinh,cosh,tanh,tan,sin,cos,sqrt
 import aiohttp
 from api_wrappers import reddit,giphy,thispersondoesnotexist
-# from akinator.async_aki import Akinator
 import matplotlib.pyplot as plt
 from errors_views import views,flagcon
 
