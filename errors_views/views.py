@@ -6,6 +6,7 @@ from cogs import economy
 from bs4 import BeautifulSoup
 from stars import client,sv_id
 import random
+from api_wrappers import thispersondoesnotexist
 
 class EmojiButton(Button):
     def __init__(self,emoji,answer_emoji):

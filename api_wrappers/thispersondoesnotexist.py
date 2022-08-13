@@ -1,6 +1,4 @@
-from io import BytesIO
 import aiohttp
-import asyncio
 from bs4 import BeautifulSoup
 
 
@@ -14,7 +12,8 @@ class ThisPersonDoesNotExist:
         r_t = await r.text()
         soup = BeautifulSoup(r_t,features='html.parser')
         link = soup.find('img', {'id':'avatar'})
-        await session.close()
-        return link
-
-
+        link = str(link)
+        link = link[41:77]
+        lins = f'https://this-person-does-not-exist.com/img/avatar-{link}'
+        await session.close()            
+        return lins 

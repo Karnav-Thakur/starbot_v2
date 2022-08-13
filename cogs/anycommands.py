@@ -406,7 +406,7 @@ class Modules(commands.Cog):
             embed.set_image(url=link)
 
             if nsfw == False:
-                await msg.edit(embed=embed,view = view)
+                await msg.edit_original_message(embed=embed,view = view)
 
         async def end_callback(interaction:discord.Interaction):
             for item in view.children:
@@ -607,7 +607,35 @@ class Modules(commands.Cog):
     async def notexist(self,ctx:discord.ApplicationContext):
         obj = thispersondoesnotexist.ThisPersonDoesNotExist("https://this-person-does-not-exist.com/en")
         link = await obj.link()
-        await ctx.respond(link)
+        
+        nex = Button(style=ButtonStyle.green,label='Next Image')
+        end = Button(style=ButtonStyle.gray,label="End Interaction")
+        
+        view = View()
+        view.add_item(nex)
+        view.add_item(end)
+
+        embed = discord.Embed(title = "This Person Doesn't Exist",color=discord.Color.random())
+        embed.set_image(url=link)
+
+        msg = await ctx.respond(embed=embed,view=view)
+
+        async def nex_callback(interaction:discord.Interaction):
+            obj = thispersondoesnotexist.ThisPersonDoesNotExist("https://this-person-does-not-exist.com/en")
+            link = await obj.link()
+            embed = discord.Embed(title = "This Person Doesn't Exist",color=discord.Color.random())
+            embed.set_image(url=link)
+            await interaction.response.edit_message(embed=embed)
+        
+        async def end_callback(interaction:discord.Interaction):
+            for child in view.children:
+                child.disabled = True
+            
+            await interaction.response.edit_message(view=view)
+        
+        nex.callback = nex_callback
+        end.callback = end_callback
+
 
 
     @commands.Cog.listener()
