@@ -1,0 +1,6 @@
+{
+    "sewer":["Oh nice you got ", "Idk what you were doing there but you got ", "It's smelly down here but atleast you got "],
+    "ground":["You stepped on ", "In the grass you found ", "Life is strange as it made you step on ","You found a wallet and it had "],
+    "bed": ["Bed bugs paid their rent with ", "Your bed is more rich than you, it gave you ","Bed sheets generate coins, be sure to take them, you got "],
+    "tree": ["You climbed a tree and found ", "Apparntly Birds are rich af, you got ", "The wood you got is worth "]
+}

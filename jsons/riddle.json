@@ -1,0 +1,7 @@
+{
+    "I am more than 650. I have the digit 7 in the ones place. I am less than 750. The sum of my three numbers is 17. What number am I?":"737",
+    "I am a three digit number. My tens digit is five more than my ones digit. My hundreds digit is eight less than my tens digit. What number am I?":"194",
+    "The digits of a two-digit number differ by 3. If the digits are interchanged, and the resulting number is added to the orignal number, we get 143. What can be the orignal number?": ["58","85"],
+    "Arjun is twice as old as Shriya. Five years ago his age was three times Shriya's age. Find Arjun's present age.": "20",
+    "Sum of the digits of a two-digit number is 9. When we interchange the digits, it is found that the resulting new number is greater than the orignal number by 27. What is the two-digit number?" : "36"
+}
