@@ -15,7 +15,7 @@ from datetime import datetime,timedelta
 from math import log10,log,sinh,cosh,tanh,tan,sin,cos,sqrt
 import aiohttp
 from api_wrappers import reddit,giphy,thispersondoesnotexist
-from akinator.async_aki import Akinator
+# from akinator.async_aki import Akinator
 import matplotlib.pyplot as plt
 from errors_views import views,flagcon
 
@@ -437,21 +437,21 @@ class Modules(commands.Cog):
         embed.set_image(url = emoji.url)
         await ctx.respond(embed=embed)
         
-    @modules.command()
-    async def akinator(self,ctx:discord.ApplicationContext):
-        aki = Akinator()
-        q = await aki.start_game()
-        ques = {'q':q}
+    # @modules.command()
+    # async def akinator(self,ctx:discord.ApplicationContext):
+    #     aki = Akinator()
+    #     q = await aki.start_game()
+    #     ques = {'q':q}
 
-        responses = ["Yes","No","I Don't Know","Probably","Probably Not"]
+    #     responses = ["Yes","No","I Don't Know","Probably","Probably Not"]
 
-        view = View()
-        for res in responses:
-            button = views.AkinatorButton(aki,ctx.author,ques,style=ButtonStyle.blurple,label = res)
-            view.add_item(button)
+    #     view = View()
+    #     for res in responses:
+    #         button = views.AkinatorButton(aki,ctx.author,ques,style=ButtonStyle.blurple,label = res)
+    #         view.add_item(button)
 
-        embed = discord.Embed(title="Akinator",description=ques["q"],colour=discord.Color.random())
-        await ctx.respond(embed=embed,view = view)
+    #     embed = discord.Embed(title="Akinator",description=ques["q"],colour=discord.Color.random())
+    #     await ctx.respond(embed=embed,view = view)
 
     @modules.command()    
     async def trivia_category(self,ctx:discord.ApplicationContext):
