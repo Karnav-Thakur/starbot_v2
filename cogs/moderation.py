@@ -66,6 +66,7 @@ class Moderation(commands.Cog):
         guild = await client.db.fetchrow(f"SELECT * FROM meme WHERE guild_id = $1",ctx.guild.id)
         if not guild:
             await client.db.execute("INSERT INTO meme (guild_id,channel_id) VALUES($1,$2)",ctx.guild.id,channel.id)
+            await ctx.respond(f"Successfully Changed meme channel to {channel.mention} ")
         else:
             if guild['channel_id'] == channel:
                 await ctx.respond("This Channel is already set as the meme channel")
