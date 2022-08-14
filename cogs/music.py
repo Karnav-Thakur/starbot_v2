@@ -4,10 +4,12 @@ from stars import sv_id, client
 import youtube_dl
 import requests
 
+queue = {}
 
 class Music(commands.Cog):
     def __init__(self,client):
-        discord.client = client
+        self.client = client
+        self.queue = queue
     
     music = discord.SlashCommandGroup('music','Get some funny music',sv_id)
 
