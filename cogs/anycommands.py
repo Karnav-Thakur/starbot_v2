@@ -599,11 +599,6 @@ class Modules(commands.Cog):
         await ctx.respond(embed=embed)
 
     @modules2.command()
-    async def test(self,ctx:discord.ApplicationContext):
-        red = reddit.Reddit(f"https://www.reddit.com/r/memes/random/.json","memes")
-        print(await red.author())
-
-    @modules2.command()
     async def notexist(self,ctx:discord.ApplicationContext):
         obj = thispersondoesnotexist.ThisPersonDoesNotExist("https://this-person-does-not-exist.com/en")
         link = await obj.link()
