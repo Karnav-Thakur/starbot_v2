@@ -406,7 +406,7 @@ class Modules(commands.Cog):
             embed.set_image(url=link)
 
             if nsfw == False:
-                await msg.edit_original_message(embed=embed,view = view)
+                await interaction.response.edit_message(embed=embed,view = view)
 
         async def end_callback(interaction:discord.Interaction):
             for item in view.children:
@@ -436,22 +436,6 @@ class Modules(commands.Cog):
         embed.set_image(url = emoji.url)
         await ctx.respond(embed=embed)
         
-    # @modules.command()
-    # async def akinator(self,ctx:discord.ApplicationContext):
-    #     aki = Akinator()
-    #     q = await aki.start_game()
-    #     ques = {'q':q}
-
-    #     responses = ["Yes","No","I Don't Know","Probably","Probably Not"]
-
-    #     view = View()
-    #     for res in responses:
-    #         button = views.AkinatorButton(aki,ctx.author,ques,style=ButtonStyle.blurple,label = res)
-    #         view.add_item(button)
-
-    #     embed = discord.Embed(title="Akinator",description=ques["q"],colour=discord.Color.random())
-    #     await ctx.respond(embed=embed,view = view)
-
     @modules.command()    
     async def trivia_category(self,ctx:discord.ApplicationContext):
         url = "https://opentdb.com/api_config.php"
@@ -631,7 +615,19 @@ class Modules(commands.Cog):
         nex.callback = nex_callback
         end.callback = end_callback
 
+    @modules2.command()
+    async def howsigma(self,ctx:discord.ApplicationContext,user:discord.Member=None):
+        if user is None:
+            user = ctx.author
+        # <:gigachad:1008407283711094886>
+        # <:betamale:1008407882699649154>
+        num = random.randint(1,100)
 
+        if num <= 50:
+            await ctx.respond(f"{user.mention} You are a **{num}%** beta male <:betamale:1008407882699649154>")
+        else:
+            await ctx.respond(f"{user.mention} You are a **{num}%** sigma male <:gigachad:1008407283711094886>")
+        
 
     @commands.Cog.listener()
     async def on_message(self,message):        
