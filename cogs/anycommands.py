@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime,timedelta
 from math import log10,log,sinh,cosh,tanh,tan,sin,cos,sqrt
 import aiohttp
-from api_wrappers import reddit,giphy,thispersondoesnotexist
+from api_wrappers import reddit,giphy,thispersondoesnotexist,obama
 import matplotlib.pyplot as plt
 from errors_views import views,flagcon
 
@@ -628,6 +628,15 @@ class Modules(commands.Cog):
         else:
             await ctx.respond(f"{user.mention} You are a **{num}%** sigma male <:gigachad:1008407283711094886>")
         
+    @modules2.command()
+    async def obamatalk(self,ctx:discord.ApplicationContext,*,text=None):
+        if text is None:
+            await ctx.send("Please use some text for obama to speak")
+            return
+        stuff = await obama.main(text)
+        await ctx.respond(stuff[0])
+        print(stuff[1])
+
 
     @commands.Cog.listener()
     async def on_message(self,message):        

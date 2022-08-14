@@ -40,3 +40,4 @@ client.remove_command('help')
 loop = asyncio.get_event_loop()
 loop.run_until_complete(create_db_pool())
 client.run(token)
+    
