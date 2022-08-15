@@ -631,10 +631,17 @@ class Modules(commands.Cog):
     @modules2.command()
     async def obamatalk(self,ctx:discord.ApplicationContext,*,text=None):
         if text is None:
-            await ctx.send("Please use some text for obama to speak")
+            await ctx.respond("Please use some text for obama to speak")
             return
-        stuff = await obama.main(text)
-        await ctx.respond(stuff[0])
+        if len(text) > 280:
+            await ctx.respond("Please put text which is less than 280 characters ")
+            return
+        
+        stuff = await obama.main(text,ctx)
+
+
+
+        await ctx.respond(f"{ctx.author.mention} Here is your video\n{stuff[0]}")
         print(stuff[1])
 
 
