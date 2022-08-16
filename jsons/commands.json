@@ -121,5 +121,13 @@
     "wyptb": "The bot gives you a condition but there is always a compromise you will have to make, can you press the button to get those powers? Usage-> |/wyptb|",
     "eightball": "Get answers to your burning questions. Usage -> |/eightball <question>|",
     "connect4": "Get four of your emojis in a straight line, may it be diagonal or straight. Usage -> |/connect4 [bet]|",
-    "desync": "Only for KarnaV to update the help command"
+    "desync": "Only for KarnaV to update the help command",
+    "join": "Make the bot join The VC. The author of the command must be connected in a vc themselves for using this command. Usage -> |/join|",
+    "dc": "Make the bot leave the VC. The author of the command must be connected in the same vc as the bot to use this command. Usage -> |/dc|",
+    "move": "Move the bot from one VC to another. Usage -> |/move|",
+    "auto_meme": "Change the channel for auto memes. Usage -> |/auto_meme <channel>|",
+    "notexist": "Get pictures of non existing people (technically). Usage -> |/notexist|",
+    "howsigma": "Get to know how sigma Someone is. Usage -> |/howsigma <user>|",
+    "obamatalk": "Make Obama talk anything you want. Usage -> |/obamatalk <text>| The text limit is 280 characters",
+    "kick": "Kick someone (GIF generator). Usage -> |/kick {user}|"
 }
