@@ -221,6 +221,24 @@ class Connect4Button(Button):
                 item.disabled = False
         await self.con4.editBoard(interaction.message,self.board,self.view)
 
+class NotExistButton(Button):
+    def __init__(self,label,style):
+        super().__init__(style=style,label=label)
+
+    
+    async def callback(self,interaction:discord.Interaction):
+        if self.label == "Next Image":
+            obj = thispersondoesnotexist.ThisPersonDoesNotExist("https://this-person-does-not-exist.com/en")
+            link = await obj.link()
+            embed = discord.Embed(title = "This Person Doesn't Exist",color=discord.Color.random())
+            embed.set_image(url=link)
+            await interaction.response.edit_message(embed=embed)
+        else:
+            for child in self.view.children:
+                child.disabled = True
+            
+            await interaction.response.edit_message(view=self.view)
+
 class HelpSelect(Select):
     def __init__(self,headings,options):
         super().__init__(options = options)
