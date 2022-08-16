@@ -124,7 +124,7 @@
     "desync": "Only for KarnaV to update the help command",
     "join": "Make the bot join The VC. The author of the command must be connected in a vc themselves for using this command. Usage -> |/join|",
     "dc": "Make the bot leave the VC. The author of the command must be connected in the same vc as the bot to use this command. Usage -> |/dc|",
-    "move": "Move the bot from one VC to another. Usage -> |/move|",
+    "move": "Move the bot from one VC to another. Usage -> |/move {channel}|",
     "auto_meme": "Change the channel for auto memes. Usage -> |/auto_meme <channel>|",
     "notexist": "Get pictures of non existing people (technically). Usage -> |/notexist|",
     "howsigma": "Get to know how sigma Someone is. Usage -> |/howsigma <user>|",
