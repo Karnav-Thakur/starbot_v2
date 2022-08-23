@@ -825,50 +825,7 @@ class TextCommands(commands.Cog):
         embed = discord.Embed(title = flags.title,description=flags.description,color=discord.Color.random())
         await ctx.respond(embed=embed)
 
-class Miscellaneous(commands.Cog):
-    def __init__(self,client):
-        self.client = client
-    
-    miscellaneous = discord.SlashCommandGroup('miscellaneous', 'Being silly',sv_id)
-
-    @miscellaneous.command()
-    async def slap(self,ctx:discord.ApplicationContext,user:discord.Member = None):
-        if user is None:
-            await ctx.respond("Please tag someone")
-            return
-        with open('./jsons/stuff.json',encoding='utf-8') as f:
-            data = json.load(f)
-        
-        slap_gifs = data["slap"]
-        gifs = random.choice(slap_gifs)
-        embed = discord.Embed(colour=discord.Color.random())
-        embed.set_image(url=gifs)
-        embed.set_author(name=f"{ctx.author.name} slapped {user.name} oof",icon_url=ctx.author.display_avatar.url)
-        await ctx.respond(embed=embed)
-
-    @miscellaneous.command()
-    async def kick(self,ctx:discord.ApplicationContext,user:discord.Member=None):
-        if user is None:
-            await ctx.respond("Please tag someone")
-            return
-        with open('./tokens/giphy_api_key.txt') as f:
-            api_key = f.read()  
-
-        gifs = giphy.Giphy(api_key=api_key,query='anime kick')
-        links = gifs.links()
-
-        kick =  random.choice(links)
-        await ctx.respond(f"{kick}.gif")
-        embed = discord.Embed(colour=discord.Color.random())
-        embed.set_image(url=kick)
-        embed.set_author(name=f"{ctx.author.name} kicked {user.name} oof",icon_url=ctx.author.display_avatar.url)
-        await ctx.respond(embed=embed)
-        
-#hello world
-
-
 def setup(client):
     client.add_cog(Modules(client))
     client.add_cog(ImageCommands(client))
     client.add_cog(TextCommands(client))
-    client.add_cog(Miscellaneous(client))

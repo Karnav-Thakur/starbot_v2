@@ -23,7 +23,13 @@ class Giphy:
         for item in self.json["data"]:
             links.append(item['url'])
         return links
+
     
+
+if __name__ == "__main__":
+
+    gifphy = Giphy('','hamburger')
+    print(gifphy.links())
     
     
         

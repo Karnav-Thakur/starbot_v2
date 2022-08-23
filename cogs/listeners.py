@@ -106,7 +106,8 @@ class Listeners(commands.Cog):
             return
 
         msg= client.get_message(payload.message_id)
-        if msg.author.id == client.user.id:
+        channel_id = await client.db.fetch('SELECT * FROM meme WHERE guild_id = $1',916037482171236372)
+        if msg.author.id == client.user.id and payload.channel_id == channel_id:
             try:
                 await msg.pin(reason='Karnav found this meme good')
             except Exception as e:
