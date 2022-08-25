@@ -628,7 +628,6 @@ class Modules(commands.Cog):
         await ctx.respond(f"{ctx.author.mention} Here is your video\n{stuff[0]}")
         print(stuff[1])
 
-
     @commands.Cog.listener()
     async def on_message(self,message):        
         for ids, reason in afks.afk.items():
