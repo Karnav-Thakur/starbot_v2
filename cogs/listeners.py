@@ -105,7 +105,8 @@ class Listeners(commands.Cog):
         if payload.user_id != client.owner_id:
             return
 
-        msg= await client.fetch_message(payload.message_id)
+
+        msg= await client.get_message(payload.message_id)
         channel_id = await client.db.fetch('SELECT * FROM meme WHERE guild_id = $1',916037482171236372)
         if msg.author.id == client.user.id and payload.channel_id == channel_id:
             try:
