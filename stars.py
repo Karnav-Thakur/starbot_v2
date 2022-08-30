@@ -8,7 +8,7 @@ from datetime import datetime
 
 intents = discord.Intents.all()
 
-sv_id = [985606394466148493 , 813495143512408134,916037482171236372]
+sv_id = [985606394466148493 , 813495143512408134,916037482171236372,702830533721194526]
 client = commands.Bot(command_prefix='star ',intents = intents,owner_id=573907301245911040)
 
 client.launch_time = datetime.utcnow()
