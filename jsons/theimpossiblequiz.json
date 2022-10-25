@@ -8,5 +8,12 @@
     {"question":"What sound does a bell make?","options":["Whoop", "F'taang", "Froon", "Blip-blop-bloop-banga-o-langa-woof."],"answer_index":"1"},
     {"question":"What can you put in a bucket to make it lighter?","options":["GYPSIES", "TORCH", "A HOLE", "CANNED LAUGHTER"],"answer_index":"1"},
     {"question":"What is the 7th letter of the alphabet?","options":["G", "H", "I","J"],"answer_index":"1"},
-    {"question":"Deal or no deal?","options":["DEAL!","NO DEAL!","SEAL!","NO SEAL!"],"answer_index":"2"}
+    {"question":"Deal or no deal?","options":["DEAL!","NO DEAL!","SEAL!","NO SEAL!"],"answer_index":"2"},
+    {"question":"Save changes to 'untitled'?","options":[ "YES", "NO", "CANCEL","BRAN"],"answer_index":"3"},
+    {"question":"How do you kill a werewolf?","options":["SHOE POLISH", "GRAVY GRANULES", "BLACK PUDDING", "CILLIT BANG"],"answer_index":"0"},
+    {"question":"What flavour is cardboard?","options":["HONEY", "PORK SCRATCHINGS", "EGG MAYONNAISE", "TALC"],"answer_index":"2"},
+    {"question":"What are the main ingredients of shampoo?","options":["CRICKET CRAP", "BABYCHAM AND HUMAN FAECES", "ROCKS AND SAUSAGES","CATS AND WHELKS"],"answer_index":"1"},
+    {"question":"What do you call a wingless fly?","options":[ "A FLAP", "A WALK", "A PLUM","JASON"],"answer_index":"1"},
+    {"question":"Mary Rose sat on a pin","options":["O RLY?", "MARY ROSE", "BURST HER PILES","AHAHAHAAHA!"],"answer_index":"1"},
+    {"question":"Bridget makes everyone...","options":["GAY", "STRAIGHT", "BI","TOM CRUISE"],"answer_index":"3"}
 ]
