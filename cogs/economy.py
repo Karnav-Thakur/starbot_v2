@@ -1,4 +1,5 @@
 import asyncio
+from email import message
 import random
 import discord
 from stars import client,sv_id
@@ -943,6 +944,36 @@ class Games(commands.Cog):
             button = views.Connect4Button(board,con4,turn,gameOver,str(i))
             view.add_item(button)
         await con4.printBoard(ctx,board,view)
+
+    @games.command()
+    @check()
+    async def impossiblequiz(self,ctx:discord.ApplicationContext):
+        with open('./jsons/theimpossiblequiz.json',encoding='utf-8') as f:
+            data = json.load(f)
+
+        for index,i in enumerate(data):
+            embed = discord.Embed(title='Impossible Quiz',colour=discord.Color.random())
+            embed.add_field(name=f'Question No. {index+1}',value=i['question'])
+            view = View()
+            for index,opt in enumerate(i['options']):
+                if index < 2:
+                    button = views.TheImpossibleQuiz(opt,ButtonStyle.blurple,i['options'],i['answer_index'],row=1)
+                    view.add_item(button)
+                if index >= 2:
+                    button = views.TheImpossibleQuiz(opt,ButtonStyle.blurple,i['options'],i['answer_index'],row=2)
+                    view.add_item(button)
+            await ctx.respond(embed=embed,view=view)
+
+            try:
+                som = await client.wait_for('interaction',check=lambda interaction:interaction.data['component_type'] == 2,timeout=10.0)
+            except asyncio.TimeoutError:
+                await ctx.respond("Ded")
+                return
+
+            if 'return' in i['options']:
+                return   
+
+            await asyncio.sleep(1)         
 
 class Shop(commands.Cog):
     def __init__(self,client):

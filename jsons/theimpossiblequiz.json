@@ -1,0 +1,12 @@
+[
+    {"question":"How many holes in a polo?","options":["ONE","TWO","THREE","FOUR"],"answer_index":"3"},
+    {"question":"Can a match box?","options":["YES","NO","BUT A TIN CAN","YES, ONE BEAT MIKE TYSON"],"answer_index":"2"},
+    {"question":".sdrawkcab noitseuq siht rewsnA","options":["K.O","WHAT?","I DON'T UNDERSTAND","TENNIS ELBOW"],"answer_index":"0"},
+    {"question":"√Onion","options":["28","CARROT","SHALLOTS","∏"],"answer_index":"2"},
+    {"question":"What was the answer to Question 2?","options":["THAT ONE ->","THAT ONE ↙","THAT ONE ↑","THIS ONE"],"answer_index":"1"},
+    {"question":"What follows December 2nd?","options":["DECEMBER 3RD","n","A QUESTION MARK","142 DWARVES"],"answer_index":"1"},
+    {"question":"What sound does a bell make?","options":["Whoop", "F'taang", "Froon", "Blip-blop-bloop-banga-o-langa-woof."],"answer_index":"1"},
+    {"question":"What can you put in a bucket to make it lighter?","options":["GYPSIES", "TORCH", "A HOLE", "CANNED LAUGHTER"],"answer_index":"1"},
+    {"question":"What is the 7th letter of the alphabet?","options":["G", "H", "I","J"],"answer_index":"1"},
+    {"question":"Deal or no deal?","options":["DEAL!","NO DEAL!","SEAL!","NO SEAL!"],"answer_index":"2"}
+]

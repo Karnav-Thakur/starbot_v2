@@ -264,3 +264,27 @@ class HelpSelect(Select):
         for item in self.view.children:
             item.disabled = True
         await interaction.response.edit_message(embed=embed,view= self.view)
+
+class TheImpossibleQuiz(Button):
+    def __init__(self,label,style,options:list,answer,row):
+        super().__init__(style=style,label=label,row=row)
+        self.answer = answer
+        self.options = options
+    
+    async def callback(self, interaction: discord.Interaction):
+        a = interaction.followup            
+
+        if self.options.index(self.label) == int(self.answer):
+            for item in self.view.children:
+                item.disabled = True
+            
+            await interaction.response.edit_message(view=self.view)
+            await a.send('Correct Answer Proceed to next question')
+
+        else:
+            self.options.append('return')
+            for item in self.view.children:
+                item.disabled = True
+            await interaction.response.edit_message(view=self.view)
+            await a.send('Wrong Choice you are disqualified')
+
