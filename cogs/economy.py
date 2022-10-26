@@ -967,7 +967,7 @@ class Games(commands.Cog):
             try:
                 som = await client.wait_for('interaction',check=lambda interaction:interaction.data['component_type'] == 2,timeout=10.0)
             except asyncio.TimeoutError:
-                await ctx.respond("Ded")
+                await ctx.respond("You didn't respond in time, you are disqualified")
                 return
 
             if 'return' in i['options']:
