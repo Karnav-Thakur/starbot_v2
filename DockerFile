@@ -1,5 +1,5 @@
 FROM python:3.8
-WORKDIR /app
-COPY . /app
+WORKDIR /starbot_v2
+COPY . /starbot_v2
 RUN pip install -r requirements.txt
-CMD ["python", "main.py"]
+CMD ["python", "stars.py"]
